@@ -1,0 +1,24 @@
+html,body {
+    height: 100%;
+    margin: 0px;
+}
+
+body {
+    background-image: url(PowerStandby.png);
+    background-size: 400px 400px;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+}
+
+div.chart {
+    margin: 0px auto;
+    margin-top: 15px;
+    width: 80%;
+    opacity: 0.7;
+    z-index:2
+}
+
+svg text {
+  font: normal 23px Arial;
+}

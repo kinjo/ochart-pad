@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+  <head>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/d3/d3.js"></script>
+    <script src="bower_components/nvd3/nv.d3.js"></script>
+    <script src="bower_components/angularjs-nvd3-directives/dist/angularjs-nvd3-directives.js"></script>
+    <link rel="stylesheet" href="bower_components/nvd3/nv.d3.css"/>
+    <link rel="stylesheet" href="chart.css"/>
+    <script src="chart.js"></script>
+  </head>
+  <body ng-app="nvd3TestApp">
+    <div ng-controller="ExampleCtrl" class="chart" ng-style="{height: height + 'px'}">
+      <nvd3-pie-chart
+         id="exampleId"
+         data="exampleData"
+         x="xFunction()"
+         y="yFunction()"
+         showLabels="true"
+         donut="true"
+         donutLabelsOutside="true"
+         showValues="true"
+         color="colorFunction()"
+         transitionduration="1200"
+         donutRatio=".6"
+         margin="{left:0,top:0,bottom:0,right:0}">
+      </nvd3-pie-chart>
+    </div>
+  </body>
+</html>
