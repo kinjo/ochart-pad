@@ -1,5 +1,5 @@
 $( function(){
-    $(".button").on("click", function(){
+    $(".button").on("click touchstart", function(){
         if(!$(this).hasClass('animation')){
             $.ajax({
                 url: "http://www12241ue.sakura.ne.jp:4567/vote.json",
@@ -18,6 +18,7 @@ $( function(){
             });
         }
         $(this).addClass("animation");
+        return false;
     });
     $(".button").on('animationend webkitAnimationEnd mozAnimationEnd', function(){
         $(this).removeClass("animation");
