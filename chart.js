@@ -42,13 +42,20 @@ function ExampleCtrl($scope, $window, openWeatherService, $timeout) {
     }
     fetchData();
 
+    var timer;
     $scope.intervalFunction = function(){
-        $timeout(function() {
+        timer = $timeout(function() {
             fetchData();
             $scope.intervalFunction();
         }, 2500)
     };
     $scope.intervalFunction();
+
+    $scope.$on("$destroy", function(){
+        if (timer) {
+            $timeout.cancel(timer);
+        }
+    });
 
     $scope.xFunction = function() {
         return function(d) {
