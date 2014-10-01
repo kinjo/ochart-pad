@@ -9,12 +9,24 @@ $( function(){
         $(".whale").addClass("whale-anim2");
         return false;
     });
+    $("#effect-big").on("click touchstart", function(){
+        $(".splash").addClass("splash-anim3");
+        $(".whale").addClass("whale-anim3");
+        var cheer = document.getElementById("cheer");
+        cheer.currentTime = 0;
+        cheer.play();
+        return false;
+    });
     $(".whale").on('animationend webkitAnimationEnd mozAnimationEnd', function(){
 
-        $(this).removeClass("whale-anim1 whale-anim2");
+        var cheer = document.getElementById("cheer");
+        cheer.pause();
+
+
+        $(this).removeClass("whale-anim1 whale-anim2 whale-anim3");
     });
     $(".splash").on('animationend webkitAnimationEnd mozAnimationEnd', function(){
 
-        $(this).removeClass("splash-anim1 splash-anim2");
+        $(this).removeClass("splash-anim1 splash-anim2 splash-anim3");
     });
 });
